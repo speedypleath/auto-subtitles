@@ -21,6 +21,8 @@ httpx = {version = ">=0.22,<0.24", source = "pypi"}
 
 [tool.poetry.group.dev.dependencies]
 coverage = "^7.2.2"
+flake8 = "^6.0.0"
+poethepoet = "^0.19.0"
 
 [build-system]
 requires = ["poetry-core"]
@@ -28,7 +30,22 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 auto_subtitles = "src.cli:auto_subtitles"
+
+[tool.poe.tasks]
+test = "python -m unittest test/"
 coverage = "coverage run -m unittest test/"
+lint = "flake8"
+clean = """
+# Multiline commands including comments work too. Unescaped whitespace is ignored.
+rm -rf .coverage
+       .mypy_cache
+       .pytest_cache
+       dist
+       ./**/__pycache__
+"""
 
 [tool.coverage.run]
+omit = [".*", "*/site-packages/*"]
+
+[tool.flake8.run]
 omit = [".*", "*/site-packages/*"]

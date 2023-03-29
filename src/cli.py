@@ -3,6 +3,7 @@ import click
 from dotenv import load_dotenv
 from .main import add_subtitles_to_video
 
+
 @click.command()
 @click.option('--input', '-i', required=True, help='Path to video file', type=click.Path(exists=True))
 @click.option('--output', '-o', required=True, help='Output video file', type=click.Path())
@@ -14,5 +15,5 @@ def auto_subtitles(input, output, api_key):
             raise ValueError('No API key provided')
     else:
         os.environ['AAI_API_KEY'] = api_key
-        
+
     add_subtitles_to_video(input, output)

@@ -33,6 +33,12 @@ Options:
   --help             Show this message and exit.
 ```
 
+## Build
+
+```bash
+poetry build
+```
+
 ## Coverage
 
 ```bash

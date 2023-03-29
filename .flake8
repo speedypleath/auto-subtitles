@@ -1,0 +1,6 @@
+[flake8]
+# H306  : imports not in alphabetical order
+ignore = H306
+exclude = .git, .tox, .eggs, __pycache__, build, dist, docs, venv, site_packages, .idea, .pytest_cache, .mypy_cache, .coverage, .coverage.*
+max-complexity = 10
+max_line_length = 120
