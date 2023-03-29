@@ -1,0 +1,7 @@
+dist
+*.egg*
+env
+.env
+.vscode
+.pytest_cache
+__pycache__
