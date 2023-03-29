@@ -1,12 +1,14 @@
 from src.main import upload, transcribe, wait_for_trancription, write_subtitles
+from dotenv import load_dotenv
 import unittest
 import os
 
 
 class TestAAI(unittest.TestCase):
     def setUp(self):
-        self.audio_path = 'test/data/output.mp3'
-        self.subtitles_path = 'test/data/subtitles.srt'
+        load_dotenv()
+        self.audio_path = os.getenv("TEST_AUDIO_PATH")
+        self.subtitles_path = os.getenv("TEST_SUBTITLES_PATH")
         self.upload_url = upload(self.audio_path)
         self.transcript_id = transcribe(self.upload_url)
         wait_for_trancription(self.transcript_id)
