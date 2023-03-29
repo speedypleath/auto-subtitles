@@ -1,0 +1,6 @@
+site_name: Auto subtitles
+nav:
+    - Home: 'index.md'
+theme:
+    name: readthedocs
+repo_url: https://github.com/speedypleath/auto-subtitles.wiki.git

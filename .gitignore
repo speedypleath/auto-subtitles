@@ -1,9 +1,11 @@
 dist
+site
 *.egg*
 env
 .env
-.vscode
 .pytest_cache
 __pycache__
 .coverage
 htmlcov
+.tox
+site
