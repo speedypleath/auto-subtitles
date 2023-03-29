@@ -1,5 +1,10 @@
 # Auto-subtitles video tool using AssemblyAI API and ffmpeg
 
+## Requirements
+
+You need an AssemblyAI API key. You can get one [here](https://app.assemblyai.com/login).
+API key can be set using the `--api_key` option or by setting the `AAI_API_KEY` environment variable.
+
 ## Install
 
 ### Pip
@@ -26,4 +31,10 @@ Options:
   -o, --output PATH  Output video file  [required]
   --api_key TEXT     AssemblyAI API key
   --help             Show this message and exit.
+```
+
+## Coverage
+
+```bash
+coverage run -m unittest && coverage report -m
 ```

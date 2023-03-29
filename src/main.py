@@ -98,3 +98,6 @@ def add_subtitles_to_video(video_path: str, output_path: str) -> None:
     wait_for_trancription(id)
     write_subtitles(id, 'temp/subtitles.srt')
     add_subtitles(video_path, 'temp/subtitles.srt', output_path)
+    os.remove('temp/input.mp3')
+    os.remove('temp/subtitles.srt')
+    os.rmdir('temp')
